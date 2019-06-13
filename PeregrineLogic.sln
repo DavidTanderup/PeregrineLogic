@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.572
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PeregrineLogic", "PeregrineLogic\PeregrineLogic.csproj", "{165CDE8B-EFD6-410F-8123-8EC3E753B68A}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{165CDE8B-EFD6-410F-8123-8EC3E753B68A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{165CDE8B-EFD6-410F-8123-8EC3E753B68A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{165CDE8B-EFD6-410F-8123-8EC3E753B68A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{165CDE8B-EFD6-410F-8123-8EC3E753B68A}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {4A342BC0-0822-4BCB-B3F1-6989AC3D9AC1}
+	EndGlobalSection
+EndGlobal
