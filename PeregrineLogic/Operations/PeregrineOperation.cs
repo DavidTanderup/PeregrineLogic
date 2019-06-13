@@ -65,18 +65,18 @@ namespace PeregrineConsole.Operations
         /// Download and save to Database
         private void Download(DateTime date, DownloadEngine download, Formatting formatting, PeregrineOperation peregrine, MACD macd, Stochastic stochastic, TechnicalIndicators indicators, Transactions transactions, WebClient web, WebURIs uRIs, string Database)
         {
-            //List<string> Symbols = transactions.DatabaseSymbolListQuery(stocks);
-            //transactions.TruncateStockTable("Clean Data"); // clears data from the clean data table.
+            List<string> Symbols = transactions.DatabaseSymbolListQuery(stocks);
+            transactions.TruncateStockTable("Clean Data"); // clears data from the clean data table.
             int count = 1;
-            //foreach (var stock in Symbols)
-            //{
-            //    Console.Clear();
-            //    Console.WriteLine($"Downloading {stock} || {count} of {Symbols.Count}");
-            //    download.ToDatabase(date, formatting, peregrine, transactions, web, uRIs, stock, Database);
-            //    count++;
-            //}
-            //Console.WriteLine("I'm Done");
-            //count = 1;
+            foreach (var stock in Symbols)
+            {
+                Console.Clear();
+                Console.WriteLine($"Downloading {stock} || {count} of {Symbols.Count}");
+                download.ToDatabase(date, formatting, peregrine, transactions, web, uRIs, stock, Database);
+                count++;
+            }
+            Console.WriteLine("I'm Done");
+            count = 1;
             //calls the list of stocks that have been data verified
             List<string> CleanData = transactions.DatabaseSymbolListQuery(stocks);
             foreach (var stock in CleanData)
