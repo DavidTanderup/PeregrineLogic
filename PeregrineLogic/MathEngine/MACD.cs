@@ -17,7 +17,7 @@ namespace PeregrineConsole.MathEngine
 
         public List<MACD> TodaysMACD(string stock, Transactions transactions)
         {
-            PeregrineOperation peregrine = new PeregrineOperation();
+            // If Ema exsists in Results
             List<double> Close = transactions.DatabasePriceQuery(stock, "Close"); // returns data with most recent date at Nth index
             List<double> EMA12 = EMA(Close, 12);
             List<double> EMA26 = EMA(Close, 26);
@@ -34,6 +34,8 @@ namespace PeregrineConsole.MathEngine
 
             return MACDList;
         }
+
+        
 
         private List<double> StarterMACD(string stock, List<double> EMA12, List<double> EMA26, List<double> Close, Transactions transactions)
         {
@@ -122,6 +124,8 @@ namespace PeregrineConsole.MathEngine
 
             return rEMA;
         }
+
+
 
 
     }

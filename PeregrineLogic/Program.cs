@@ -16,4 +16,10 @@ namespace PeregrineLogic
             peregrine.Run();
         }
     }
+
+    // Check if there is a value for the EMA and Signal
+    // If yes: check date of value
+    // calc ema based on close value
+    // save to Results
+    // If no: use current Calc engine to start process
 }

@@ -74,9 +74,12 @@ namespace PeregrineConsole.Operations
                 Console.WriteLine($"Downloading {stock} || {count} of {Symbols.Count}");
                 download.ToDatabase(date, formatting, peregrine, transactions, web, uRIs, stock, Database);
                 count++;
+
             }
             Console.WriteLine("I'm Done");
             count = 1;
+
+
             //calls the list of stocks that have been data verified
             List<string> CleanData = transactions.DatabaseSymbolListQuery(stocks);
             foreach (var stock in CleanData)

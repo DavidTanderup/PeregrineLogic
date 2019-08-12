@@ -22,10 +22,12 @@ namespace ResearchLibrary.Locations
         public SqlConnectionStringBuilder DatabaseConnectionString()
         {
             var connection = new SqlConnectionStringBuilder();
-            connection.DataSource = "peregrineresearch.database.windows.net";
-            connection.UserID = "DavidTanderup";
-            connection.Password = "Yankee$5";
-            connection.InitialCatalog = "PeregrineResearchDatabase";
+            connection.DataSource = "LAPTOP-JGOUUEDF";
+            connection.IntegratedSecurity = true;
+
+            //connection.UserID = "DavidTanderup";
+            //connection.Password = "Yankee$5";
+            connection.InitialCatalog = "PeregrineResearch";
 
             return connection;
         }

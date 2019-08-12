@@ -389,10 +389,10 @@ namespace ResearchLibrary.SQL
                         transaction = connection.BeginTransaction($"Transaction {i}");
                         command.Connection = connection;
                         command.Transaction = transaction;
-                        command.CommandText = $"Insert into [Peregrine Results] ([Date],[CIK],[Symbol],[Last Close],[50 Day Avg], [Name], [Address 1]," +
-                                              $"[City / State], [Phone], [SIC], [Industry_Title], [MACD], [MACD Signal], [Stochastic Slow], [Stochastic Signal]) " +
+                        command.CommandText = $"Insert into [Peregrine Results] ([Date],[CIK],[Symbol],[Last Close],[50 Day Avg], [Name], [Address 1], [Address 2]," +
+                                              $"[City / State], [Phone], [SIC], [Industry], [MACD], [MACD Signal], [Stochastic Slow], [Stochastic Signal]) " +
                                               $"Values (Convert(Date,'{results[i].Date}'),{results[i].CIK}, '{results[i].Symbol.Trim()}',{results[i].LastClose}," +
-                                              $"{results[i].FiftyDay}, '{results[i].Name.Trim()}', '{results[i].Address1.Trim()}', '{results[i].CityState.Trim()}'," +
+                                              $"{results[i].FiftyDay}, '{results[i].Name.Trim()}', '{results[i].Address1.Trim()}', ' ', '{results[i].CityState.Trim()}'," +
                                               $"'{results[i].Phone.Trim()}', {results[i].SIC}, '{results[i].Industry.Trim()}',{results[i].MACD},{results[i].MACDSignal}," +
                                               $"{results[i].Stochastic}, {results[i].StochasticSignal});";
 
@@ -446,8 +446,8 @@ namespace ResearchLibrary.SQL
                             Address2 = Convert.ToString(reader["Address 2"]),
                             CityState = Convert.ToString(reader["City / State"]),
                             Phone = Convert.ToString(reader["Phone"]),
-                            SIC = Convert.ToInt32(reader["SIC Code"]),
-                            Industry = Convert.ToString(reader["Industry Title"]),
+                            SIC = Convert.ToInt32(reader["SIC"]),
+                            Industry = Convert.ToString(reader["Industry_Title"]),
                             MACD = Convert.ToDouble(reader["MACD"]),
                             MACDSignal = Convert.ToDouble(reader["MACD Signal"]),
                             Stochastic = Convert.ToDouble(reader["Stochastic Slow"]),
@@ -462,6 +462,8 @@ namespace ResearchLibrary.SQL
             }
             return todayresults;
         }
+
+
 
     }
 }
